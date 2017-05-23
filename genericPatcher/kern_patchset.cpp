@@ -49,7 +49,7 @@ void PatchSet::processKext(KernelPatcher& patcher, size_t index, mach_vm_address
             if(kextList[i].loadIndex == index) {
                 if(!(progressState & ProcessingState::EverythingDone) && !strcmp(kextList[i].id, "com.apple.driver.AppleIntelFramebufferAzul")){
                     
-                    SYSLOG("coderobe.AzulPatcher4600: found net.coderobe.kext");
+                    SYSLOG("coderobe.AzulPatcher4600: found com.apple.driver.AppleIntelFramebufferAzul");
                     
                     // Disable port 0204
                     const uint8_t find[]    = {0x02, 0x04, 0x09, 0x00, 0x00, 0x04, 0x00, 0x00, 0x87, 0x00, 0x00, 0x00};
@@ -89,12 +89,11 @@ void PatchSet::processKext(KernelPatcher& patcher, size_t index, mach_vm_address
 }
 
 void PatchSet::applyPatches(KernelPatcher& patcher, size_t index, const KextPatch* patches, size_t patchNum) {
-    SYSLOG("coderobe.AzulPatcher4600: applying patches for %zu kext", index);
     for (size_t p = 0; p < patchNum; p++) {
         auto &patch = patches[p];
         if (patch.patch.kext->loadIndex == index) {
             if (patcher.compatibleKernel(patch.minKernel, patch.maxKernel)) {
-                SYSLOG("coderobe.AzulPatcher4600: applying %zu patch for %zu kext", p, index);
+                SYSLOG("coderobe.AzulPatcher4600: patching...");
                 patcher.applyLookupPatch(&patch.patch);
                 patcher.clearError();
             }

@@ -7,6 +7,7 @@ This seems to be noticeably faster than clover kext patching even when injected 
 
 #### Tested on:
 - Lenovo Y50-70 FHD
+- Lenovo Thinkpad T440p
 
 #### Features
 - Patches HDMI audio

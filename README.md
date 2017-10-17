@@ -5,6 +5,9 @@ Lilu plugin for haswell hd4600 mobile igpus
 
 This seems to be noticeably faster than clover kext patching even when injected with Clover.
 
+### OS Compatibility:
+Yosemite to High Sierra
+
 #### Tested on:
 - Lenovo Y50-70 FHD
 - Lenovo Thinkpad T440p

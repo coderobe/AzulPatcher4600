@@ -20,7 +20,7 @@ static const char* kextPaths[] {
 };
 
 static KernelPatcher::KextInfo kextList[] {
-    { "com.apple.driver.AppleIntelFramebufferAzul", &kextPaths[0], 1, {true,true}, {}, KernelPatcher::KextInfo::Unloaded },
+    { "com.apple.driver.AppleIntelFramebufferAzul", &kextPaths[0], 1, {true, true}, {}, KernelPatcher::KextInfo::Unloaded },
 };
 
 template <typename T,unsigned S>
@@ -57,7 +57,7 @@ void PatchSet::processKext(KernelPatcher& patcher, size_t index, mach_vm_address
                     const uint8_t replace[] = {0xff, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x40, 0x00, 0x00, 0x00};
                     KextPatch kext_patch {
                         {&kextList[i], find, replace, sizeof(find), 2},
-                        KernelVersion::HighSierra, KernelVersion::HighSierra
+                        KernelVersion::Yosemite, KernelVersion::HighSierra
                     };
                     applyPatches(patcher, index, &kext_patch, 1);
                     SYSLOG("coderobe.AzulPatcher4600", "disabled port 0204");
@@ -67,7 +67,7 @@ void PatchSet::processKext(KernelPatcher& patcher, size_t index, mach_vm_address
                     const uint8_t replace1[] = {0x06, 0x00, 0x26, 0x0a, 0x01, 0x03, 0x02, 0x02, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x30, 0x01, 0x00, 0x00, 0x90, 0x00};
                     KextPatch kext_patch1 {
                         {&kextList[i], find1, replace1, sizeof(find1), 2},
-                        KernelVersion::HighSierra, KernelVersion::HighSierra
+                        KernelVersion::Yosemite, KernelVersion::HighSierra
                     };
                     applyPatches(patcher, index, &kext_patch1, 1);
                     SYSLOG("coderobe.AzulPatcher4600", "9MB cursor byte patch (2 ports only) applied");
@@ -77,7 +77,7 @@ void PatchSet::processKext(KernelPatcher& patcher, size_t index, mach_vm_address
                     const uint8_t replace2[] = {0x01, 0x05, 0x12, 0x00, 0x00, 0x08, 0x00, 0x00, 0x87, 0x00, 0x00, 0x00};
                     KextPatch kext_patch2 {
                         {&kextList[i], find2, replace2, sizeof(find2), 2},
-                        KernelVersion::HighSierra, KernelVersion::HighSierra
+                        KernelVersion::Yosemite, KernelVersion::HighSierra
                     };
                     applyPatches(patcher, index, &kext_patch2, 1);
                     SYSLOG("coderobe.AzulPatcher4600", "HDMI audio patch applied");

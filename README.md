@@ -8,6 +8,9 @@ This seems to be noticeably faster than clover kext patching even when injected 
 ### OS Compatibility:
 Yosemite to High Sierra
 
+#### Requirements:
+- Lilu 1.2.x
+
 #### Tested on:
 - Lenovo Y50-70 FHD
 - Lenovo Thinkpad T440p

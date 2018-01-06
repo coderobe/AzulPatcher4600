@@ -1,0 +1,10 @@
+This project is licensed under the "Anyone But TonyMac" (ABTM) license, described below. No other licenses may apply.
+
+As used herein, "this License" refers to version 1 of the Anyone But TonyMac License
+
+This license applies all sections of the GNU LGPL v3, in addition to the addendum below:
+
+a)
+	tonymacx86 (tonymacx86.com, Unibeast, Multibeast, & other 'brand' names related to the aforementioned)
+	may not make use of, or redistribute this program or any of its derivatives.
+

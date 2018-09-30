@@ -1,6 +1,8 @@
 AzulPatcher4600
 ===================
 
+# Superseded by [WhateverGreen](https://github.com/acidanthera/WhateverGreen) ([info](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.Intel.md))
+
 Lilu plugin for haswell hd4600 mobile igpus  
 
 This seems to be noticeably faster than clover kext patching even when injected with Clover.
